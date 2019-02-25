@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="${jsRoot}/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="${jsRoot}/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="${jsRoot}/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${jsRoot}/assets/css/admin.css">
+    <link rel="stylesheet" href="${jsRoot}/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="${jsRoot}/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${jsRoot}/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="${jsRoot}/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${jsRoot}/css/index.css">
+</head>
+
+<body data-type="generalComponents">
+
+<div class="tpl-page-container">
+
+    <div class="tpl-content-wrapper" style="padding-left: 0px;">
+        <div class="tpl-content-page-title">
+            Amaze UI 表单
+        </div>
+        <ol class="am-breadcrumb">
+            <li><a href="#" class="am-icon-home">首页</a></li>
+            <li><a href="#">表单</a></li>
+            <li class="am-active">Amaze UI 表单</li>
+        </ol>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 表单
+                </div>
+                <div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <div class="input-icon right">
+                            <i class="am-icon-search"></i>
+                            <input type="text" class="form-control form-control-solid" placeholder="搜索..."></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="tpl-block ">
+
+                <div class="am-g tpl-amazeui-form">
+
+                    <div class="am-u-sm-12 am-u-md-12">
+                        <form class="am-form am-form-horizontal">
+                            <div class="am-form-group">
+                                <label for="headlines" class="am-u-sm-3 am-form-label">新闻标题</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" style="width: 60%" id="headlines" placeholder="新闻标题"
+                                           value="${news.title}">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="universitys" class="am-u-sm-3 am-form-label">所属院校</label>
+                                <div class="am-u-sm-9">
+                                    <select id="universitys" name="universitys" style="width:60%;">
+                                        <option value="1">浙江大学</option>
+                                        <option value="2">南京大学</option>
+                                        <option value="3">北京大学</option>
+                                        <option value="4">清华大学</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="author" class="am-u-sm-3 am-form-label">作者</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" style="width: 60%" id="author" placeholder="作者"
+                                           value="${news.author}">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <!-- body container -->
+                                <div class="container">
+                                    <center>
+                                        <div style="max-width:1100px;">
+                                            <div style="text-align:left;">
+                                                <div id="editorTxt">
+                                                    <#if news.content??>
+                                                        ${news.content}
+                                                        <#else>
+                                                            <p>欢迎使用<b>富文本编辑器</b>，请输入内容...</p>
+                                                    </#if>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-3"></div>
+                                <div class="am-u-sm-9">
+                                    <input type="hidden" id="id" name="id" value="${news.id}">
+                                    <button id="commit" type="button" class="am-btn am-btn-success am-btn-block"
+                                            style="width: 30%">
+                                        提&nbsp;&nbsp;交
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src='${jsRoot}/js/jquery-1.10.2.min.js'></script>
+<script src="${jsRoot}/assets/js/amazeui.min.js"></script>
+<script src="${jsRoot}/assets/js/app.js"></script>
+<script type="text/javascript" src='${jsRoot}/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='//unpkg.com/wangeditor/release/wangEditor.min.js'></script>
+<script type="text/javascript" src="${jsRoot}/assets/layer/layer.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor;
+    var editor = new E('#editorTxt');
+    editor.customConfig.uploadImgShowBase64 = true;
+    editor.create();
+    var newsId = "${news.id}";
+
+    $(function () {
+        var universityId = "${news.universityId}";
+        var all_options = document.getElementById("universitys").options;
+        if (universityId != '' && universityId != null) {
+            for (i = 0; i < all_options.length; i++) {
+                if (all_options[i].value == universityId) {
+                    all_options[i].selected = true;
+                } else {
+                    all_options[i].selected = false;
+                }
+            }
+        }
+    });
+
+    $('#commit').on('click', function () {
+        var headlines = $('#headlines').val();
+        var universityId = $('#universitys option:selected').val();
+        var author = $('#author').val();
+        var content = editor.txt.html();
+
+        if (headlines == "") {
+            layer.msg('请输入新闻标题');
+            return false;
+        }
+
+        if (author == "") {
+            layer.msg('请输入作者');
+            return false;
+        }
+
+        var result = '<html lang="en"><head><meta charset="UTF-8"></head><body><div style="padding: 5% 5% 10px 5%"><div><span style="font-size: 40px;color: #222222;font-weight:bold;">' +
+            headlines +
+            '</span></div>' + '<div style="float:left;font-size: 20px;color: #999999;"><span>作者:' +
+            author + '</span></div>' + '<div style="float:right;font-size: 20px;color: #999999;"><span>' + getNowDate() +
+            '</span></div>' +
+            '<div style="line-height:22px;float:left;margin-top: 25px;">' + content + '</div>' +
+            '</div></body></html>';
+
+        if (newsId !== null && newsId !== undefined && newsId !== '') {
+            $.ajax({
+                type: "PUT",
+                url: '${jsRoot}/news/' + newsId,
+                data: {
+                    'title': headlines,
+                    'universityId': universityId,
+                    'author': author,
+                    'txt': content,
+                    'content': result
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (data) {
+                    if (data.status == "success") {
+                        window.location.href = "${jsRoot}/newsList";
+                    } else {
+                        layer.msg("更新失败");
+                    }
+                }
+            });
+        } else {
+            $.ajax({
+                type: "POST",
+                url: '${jsRoot}/news',
+                data: {
+                    'title': headlines,
+                    'universityId': universityId,
+                    'author': author,
+                    'txt': content,
+                    'content': result
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (data) {
+                    if (data.status == "success") {
+                        window.location.href = "${jsRoot}/newsList";
+                    } else {
+                        layer.msg("保存失败");
+                    }
+                }
+            });
+        }
+    });
+
+    function getNowDate() {
+        var date = new Date();
+        var sign1 = "-";
+        var sign2 = ":";
+        var year = date.getFullYear() // 年
+        var month = date.getMonth() + 1; // 月
+        var day = date.getDate(); // 日
+        var hour = date.getHours(); // 时
+        var minutes = date.getMinutes(); // 分
+        var seconds = date.getSeconds() //秒
+        var weekArr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var week = weekArr[date.getDay()];
+        // 给一位数数据前面加 “0”
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (day >= 0 && day <= 9) {
+            day = "0" + day;
+        }
+        if (hour >= 0 && hour <= 9) {
+            hour = "0" + hour;
+        }
+        if (minutes >= 0 && minutes <= 9) {
+            minutes = "0" + minutes;
+        }
+        if (seconds >= 0 && seconds <= 9) {
+            seconds = "0" + seconds;
+        }
+        var currentdate = year + sign1 + month + sign1 + day + " " + hour + sign2 + minutes + sign2 + seconds + " " + week;
+        return currentdate;
+    }
+</script>
+</body>
+
+</html>

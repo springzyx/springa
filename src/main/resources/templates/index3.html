@@ -1,0 +1,607 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="${jsRoot}/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="${jsRoot}/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="${jsRoot}/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${jsRoot}/assets/css/admin.css">
+    <link rel="stylesheet" href="${jsRoot}/assets/css/app.css">
+    <link rel="stylesheet" href="${jsRoot}/css/common_select.css">
+    <link rel="stylesheet" type="text/css" href="${jsRoot}/tagsInput/jquery.tagsinput.css" />
+</head>
+
+<body data-type="generalComponents">
+
+<div class="tpl-page-container">
+
+    <div class="tpl-content-wrapper" style="padding-left: 0px;">
+        <div class="tpl-content-page-title">
+            Amaze UI 表单
+        </div>
+        <ol class="am-breadcrumb">
+            <li><a href="#" class="am-icon-home">首页</a></li>
+            <li><a href="#">表单</a></li>
+            <li class="am-active">Amaze UI 表单</li>
+        </ol>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 表单
+                </div>
+                <div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <div class="input-icon right">
+                            <i class="am-icon-search"></i>
+                            <input type="text" class="form-control form-control-solid" placeholder="搜索..."></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="tpl-block ">
+
+                <div class="am-g tpl-amazeui-form">
+
+                    <div class="am-u-sm-12 am-u-md-12">
+                        <form class="am-form am-form-horizontal">
+                            <div class="am-form-group">
+                                <label for="university-name" class="am-u-sm-3 am-form-label">大学名称</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" style="width: 60%" id="university-name" placeholder="大学名称">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-category" class="am-u-sm-3 am-form-label">所属分类</label>
+                                <div class="am-u-sm-9">
+                                    <select data-am-selected="{btnWidth: '60%', btnSize: 'sm'}"
+                                            id="university-category">
+                                        <option value="a">Apple</option>
+                                        <option value="b">Banana</option>
+                                        <option value="o">Orange</option>
+                                        <option value="m">Mango</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-img" class="am-u-sm-3 am-form-label">logo上传</label>
+                                <div class="am-u-sm-9">
+                                    <div class="am-form-group am-form-file" id="university-img">
+                                        <div class="tpl-form-file-img">
+                                            <img id="schoolImg" name="schoolImg" src="${jsRoot}/icon/addImg.png"
+                                                 class="am-img-thumbnail" alt=""
+                                                 onclick="$('#previewImg_icon').click();">
+                                        </div>
+                                        <input type="file" style="display: none;" onchange="imgUpload('icon',null)"
+                                               id="previewImg_icon" name="myImg">
+                                    </div>
+                                    <small>图片最好为长方形</small>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-tags" class="am-u-sm-3 am-form-label">标签</label>
+                                <div class="am-u-sm-9">
+                                    <input name="university-tags" id="university-tags" class="tags" value="" />
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-motto" class="am-u-sm-3 am-form-label">校训</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="university-motto" style="width: 60%" placeholder="校训">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-phone" class="am-u-sm-3 am-form-label">电话</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="university-phone" style="width: 60%" placeholder="电话">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-url" class="am-u-sm-3 am-form-label">网址</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="university-url" style="width: 60%" placeholder="网址">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label class="am-u-sm-3 am-form-label">地址</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" style="width: 30%" id="university-address1" placeholder="省">
+                                    <input type="text" style="width: 30%" id="university-address2" placeholder="市">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-address-detail" class="am-u-sm-3 am-form-label">详细地址</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="university-address-detail" style="width: 60%"
+                                           placeholder="详细地址">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-2"></div>
+                                <div class="am-u-sm-10">
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="chinese" style="text-align:center"
+                                                   class="am-form-label">语文</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="chinese">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="math" style="text-align:center" class="am-form-label">数学</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="math">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="english" style="text-align:center"
+                                                   class="am-form-label">英语</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="english">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="physical" style="text-align:center"
+                                                   class="am-form-label">物理</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="physical">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2 am-u-end">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="chemical" style="text-align:center"
+                                                   class="am-form-label">化学</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="chemical">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-2"></div>
+                                <div class="am-u-sm-10">
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="technology" style="text-align:center"
+                                                   class="am-form-label">技术</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}"
+                                                    id="technology">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="biological" style="text-align:center"
+                                                   class="am-form-label">生物</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}"
+                                                    id="biological">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="history" style="text-align:center"
+                                                   class="am-form-label">历史</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="history">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="geographic" style="text-align:center"
+                                                   class="am-form-label">地理</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}"
+                                                    id="geographic">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-2 am-u-end">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="political" style="text-align:center"
+                                                   class="am-form-label">政治</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="political">
+                                                <option value="a">A</option>
+                                                <option value="b">B</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-2"></div>
+                                <div class="am-u-sm-10">
+                                    <div class="am-u-sm-4">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="category" style="text-align:center"
+                                                   class="am-form-label">类别</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="category">
+                                                <option value="a">普通类</option>
+                                                <option value="b">艺术类</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-u-sm-4 am-u-end">
+                                        <div style="width: 40%;float: left;text-align: center;">
+                                            <label for="immortal" style="text-align:center"
+                                                   class="am-form-label">特长生</label>
+                                        </div>
+                                        <div style="width:60%;float: left;">
+                                            <select data-am-selected="{btnWidth: '100%', btnSize: 'sm'}" id="immortal">
+                                                <option value="a">是</option>
+                                                <option value="b">否</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-introduction" class="am-u-sm-3 am-form-label">院校简介</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" id="university-introduction" style="width: 60%"
+                                              placeholder="院校简介"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="university-imgs" class="am-u-sm-3 am-form-label">院校风光</label>
+                                <div class="am-u-sm-9">
+                                    <div id="university-imgs" style="width: 60%">
+                                        <div class="z_photo upimg-div clear">
+                                            <section class="z_file fl">
+                                                <img src="${jsRoot}/icon/addImg.png" class="am-img-thumbnail">
+                                                <input type="file" name="myImg" id="previewImg_icons" class="file" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div id="schoolImgList" name="schoolImgList">
+                                        <input type="hidden" id="SchoolImg_1" name="SchoolImg_1">
+                                        <input type="hidden" id="SchoolImg_2" name="SchoolImg_2">
+                                        <input type="hidden" id="SchoolImg_3" name="SchoolImg_3">
+                                        <input type="hidden" id="SchoolImg_4" name="SchoolImg_4">
+                                        <input type="hidden" id="SchoolImg_5" name="SchoolImg_5">
+                                    </div>
+                                    <small>
+                                        <div style="color: red">图片最好为正方形，不是正方形的也需要宽度小于长度的图片</div>
+                                    </small>
+                                </div>
+                            </div>
+
+                            <aside class="mask works-mask">
+                                <div class="mask-content">
+                                    <p class="del-p ">您确定要删除图片吗？</p>
+                                    <p class="check-p"><span class="del-com wsdel-ok">确定</span><span
+                                            class="wsdel-no">取消</span></p>
+                                </div>
+                            </aside>
+
+                            <div id="add">
+
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-3"></div>
+                                <div class="am-u-sm-9">
+                                    <button id="modules" type="button" class="am-btn am-btn-primary am-btn-block"
+                                            style="width: 60%">
+                                        <i class="am-icon-plus"></i>&nbsp;&nbsp;点击新增模块按钮
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-3"></div>
+                                <div class="am-u-sm-9">
+                                    <button id="commit" type="button" class="am-btn am-btn-success am-btn-block"
+                                            style="width: 30%">
+                                        提&nbsp;&nbsp;交
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="${jsRoot}/js/jquery-1.8.3.min.js"></script>
+<script src="${jsRoot}/assets/js/amazeui.min.js"></script>
+<script src="${jsRoot}/assets/js/app.js"></script>
+<script src="${jsRoot}/js/ajaxfileupload.js"></script>
+<script src="${jsRoot}/tagsInput/jquery.tagsinput.js"></script>
+<script type="text/javascript">
+    function imgUpload(id, numNow) {
+        $.ajaxFileUpload({
+            url:'${jsRoot}/upload/imgUpload',
+            secureuri:false,
+            fileElementId:"previewImg_"+id,//file标签的id
+            dataType: 'json',//返回数据的类型
+            data:{},//一同上传的数据
+            async: false,
+            success: function (data) {
+                if(data.Status=="SUCCESS"){
+                    if(id=='icon'){
+                        $("#schoolImg").attr("src",data.Src);
+                    }else{
+                        $('#CImg_'+numNow).attr("src",data.Src);
+                    }
+                }else{
+                    alert("上传失败");
+                }
+
+            },
+            error: function (data, status, e) {
+                alert(e);
+            }
+        });
+    }
+
+    $(function () {
+        var delParent;
+        var defaults = {
+            fileType: ["jpg", "png", "bmp", "jpeg"],   // 上传文件的类型
+            fileSize: 1024 * 1024 * 10                  // 上传文件的大小 10M
+        };
+        /*点击图片的文本框*/
+        $(".file").change(function () {
+            var idFile = $(this).attr("id");
+            var file = document.getElementById(idFile);
+            var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
+            var fileList = file.files; //获取的图片文件
+            if(fileList.length>1){
+                alert("选择一个进行上传");
+                return false;
+            }
+            var input = $(this).parent();//文本框的父亲元素
+            var imgArr = [];
+            //遍历得到的图片文件
+            var numUp = imgContainer.find(".up-section").length;
+            var totalNum = numUp + fileList.length;  //总的数量
+            if(fileList.length > 5 || totalNum > 5 ){
+                alert("上传图片数目不可以超过5个，请重新选择");  //一次选择上传超过3个 或者是已经上传和这次上传的到的总数也不可以超过3个
+            }
+            else if(numUp < 5){
+                fileList = validateUp(fileList);
+//                imgUpload('icons');
+                for(var i = 0;i<fileList.length;i++){
+                    var imgUrl = window.URL.createObjectURL(fileList[i]);
+//                    var reader=new FileReader();
+//                    reader.readAsDataURL(fileList[i]);
+//                    reader.onload=function(){
+//                        var imgUrl = this.result;
+                    imgArr.push(imgUrl);
+                    var numNow = numUp+1;
+                    imgUpload('icons',numNow);
+                    var $section = $("<section class='up-section fl loading'>");
+                    imgContainer.prepend($section);
+                    var $span = $("<span class='up-span'>");
+                    $span.appendTo($section);
+
+                    var $img0 = $("<img class='close-upimg'>").on("click",function(event){
+                        event.preventDefault();
+                        event.stopPropagation();
+                        $(".works-mask").show();
+                        delParent = $(this).parent();
+                    });
+                    $img0.attr("src","https://app.zjgwyks.com/learned/icon/delete.png").appendTo($section);
+
+                    var $img;
+                    if(numNow==1){
+                        $img = $("<img class='up-img up-opcity' id='CImg_1' name='CImg_1'>");
+                    }else if(numNow==2){
+                        $img = $("<img class='up-img up-opcity' id='CImg_2' name='CImg_2'>");
+                    }else if(numNow == 3){
+                        $img = $("<img class='up-img up-opcity' id='CImg_3' name='CImg_3'>");
+                    }else if(numNow == 4){
+                        $img = $("<img class='up-img up-opcity' id='CImg_4' name='CImg_4'>");
+                    }else if(numNow == 5){
+                        $img = $("<img class='up-img up-opcity' id='CImg_5' name='CImg_5'>");
+                    }
+                    $img.attr("src",imgArr[i]);
+                    $img.appendTo($section);
+//                        var $p = $("<p class='img-name-p'>");
+//                        $p.html(fileList[i].name).appendTo($section);
+                    var $input = $("<input id='taglocation' name='taglocation' value='' type='hidden'>");
+                    $input.appendTo($section);
+                    var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
+                    $input2.appendTo($section);
+//                    }
+//                    var imgs = document.getElementById('CourseImg_'+numNow);
+//                    imgs.value=imgUrl;
+                }
+            }
+            setTimeout(function(){
+                $(".up-section").removeClass("loading");
+                $(".up-img").removeClass("up-opcity");
+            },450);
+            numUp = imgContainer.find(".up-section").length;
+            if(numUp >= 5){
+                $(this).parent().hide();
+            }
+        });
+
+
+        $(".z_photo").delegate(".close-upimg", "click", function () {
+            $(".works-mask").show();
+            delParent = $(this).parent();
+        });
+
+        $(".wsdel-ok").click(function () {
+            $(".works-mask").hide();
+            var numUp = delParent.siblings().length;
+            if (numUp < 6) {
+                delParent.parent().find(".z_file").show();
+            }
+            delParent.remove();
+        });
+
+        $(".wsdel-no").click(function () {
+            $(".works-mask").hide();
+        });
+
+        function validateUp(files) {
+            var arrFiles = [];
+            for (var i = 0, file; file = files[i]; i++) {
+                var newStr = file.name.split("").reverse().join("");
+                if (newStr.split(".")[0] != null) {
+                    var type = newStr.split(".")[0].split("").reverse().join("");
+                    console.log(type + "===type===");
+                    if (jQuery.inArray(type, defaults.fileType) > -1) {
+                        if (file.size >= defaults.fileSize) {
+                            alert(file.size);
+                            alert('您这个"' + file.name + '"文件大小过大');
+                        } else {
+                            arrFiles.push(file);
+                        }
+                    } else {
+                        alert('您这个"' + file.name + '"上传类型不符合');
+                    }
+                } else {
+                    alert('您这个"' + file.name + '"没有类型, 无法识别');
+                }
+            }
+            return arrFiles;
+        }
+
+
+        $('#university-tags').tagsInput({width:'60%'});
+    });
+
+    $('#modules').on('click',function () {
+        var laster = document.getElementById('add');
+        $add = $('<div class="other">' +
+            '<div class="am-form-group">' +
+            '<label class="am-u-sm-3 am-form-label">模块名称</label>' +
+            '<div class="am-u-sm-9">' +
+            '<input type="text" style="width: 30%;float: left" placeholder="模块名称">' +
+            '<button type="button" class="am-btn am-btn-warning" style="float: left" onclick="del($(this))"><span class="am-icon-trash-o"></span> 删除</button>' +
+            '</div>' +
+            '</div>' +
+            '<div class="am-form-group">' +
+            '<label class="am-u-sm-3 am-form-label">模块内容</label>' +
+            '<div class="am-u-sm-9">' +
+            '<textarea type="text" style="width: 60%" placeholder="模块内容"></textarea>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
+        $add.appendTo(laster);
+    });
+
+    function del(index) {
+        var del = index.parent().parent().parent();
+        del.remove();
+    }
+</script>
+</body>
+
+</html>

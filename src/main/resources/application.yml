@@ -1,0 +1,59 @@
+server:
+  port: 8081
+
+---
+spring:
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://47.97.9.83:3306/new_test?characterEncoding=utf8&useSSL=false
+      username: root
+      password: Root123456!
+      driverClassName: com.mysql.jdbc.Driver
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      connectionProperties: druid.stat.mergeSql:true;druid.stat.slowSqlMills:5000
+---
+spring:
+    freemarker:
+      expose-request-attributes: true
+      expose-session-attributes: true
+      expose-spring-macro-helpers: true
+      request-context-attribute: request
+      charset: utf-8
+      cache: false
+      content-type: text/html
+      suffix: .html
+      settings:
+        template_update_delay: 0
+        tag_syntax: auto_detect
+        default_encoding: UTF-8
+        output_encoding: UTF-8
+        locale: zh_CN
+        date_format: yyyy-MM-dd
+        time_format: HH:mm:ss
+        datetime_format: yyyy-MM-dd HH:mm:ss
+        number_format: 0.##
+        classic_compatible: true
+        template_exception_handler: com.example.demo.demo.controller.FreemarkerExceptionHandler
+        url_escaping_charset: UTF-8
+        whitespace_stripping: true
+      template-loader-path: classpath:/templates/
+
+---
+jsRoot: http://localhost:${server.port}
+
+---
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.example.demo.demo.controller
+
